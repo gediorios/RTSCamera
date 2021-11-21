@@ -57,3 +57,4 @@ D:\Repos\gediorios\RTSCamera\source\RTSCamera.Shared\MissionLibrary\obj\Debug\ne
 D:\Repos\gediorios\RTSCamera\source\RTSCamera.Shared\MissionLibrary\obj\Debug\net472\MissionLibrary.csproj.CopyComplete
 D:\Repos\gediorios\RTSCamera\source\RTSCamera.Shared\MissionLibrary\obj\Debug\net472\MissionLibrary.dll
 D:\Repos\gediorios\RTSCamera\source\RTSCamera.Shared\MissionLibrary\obj\Debug\net472\MissionLibrary.pdb
+D:\Repos\gediorios\RTSCamera\source\RTSCamera.Shared\MissionLibrary\obj\Debug\net472\MissionLibrary.csproj.AssemblyReference.cache

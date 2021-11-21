@@ -15,15 +15,9 @@
 
   <Import Project="..\RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems" Label="Shared" />
 
-  <Import Project="..\RTSCamera.Shared\MissionSharedLibrary\MissionSharedLibrary.projitems" Label="Shared" />
-
   <Import Project="$(MSBuildProjectDirectory)\*.props" />
   <ItemGroup>
 	  <DotNetCliToolReference Include="dotnet-md2html" Version="1.0.0.1-preview1" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\RTSCamera.Shared\MissionLibrary\MissionLibrary.csproj" />
-    <ProjectReference Include="..\RTSCameraAgentComponent\RTSCameraAgentComponent.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SandBox">
@@ -137,6 +131,9 @@
     <Reference Include="TaleWorlds.TwoDimension">
       <HintPath>$(GamePath)bin\Win64_Shipping_Client\TaleWorlds.TwoDimension.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DI\" />
   </ItemGroup>
 
   <Target Name="RemoveModulePackageDir" AfterTargets="BeforeBuild">

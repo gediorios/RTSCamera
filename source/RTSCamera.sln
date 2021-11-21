@@ -3,50 +3,107 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RTSCamera", "RTSCamera\RTSCamera.csproj", "{7C249CDA-7BD3-4E67-AC00-3E59E0FFD07F}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RTSCamera.CommandSystem", "RTSCamera.CommandSystem\RTSCamera.CommandSystem.csproj", "{49B9A59E-5FE6-4A67-860D-A1EB9587D34F}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RTSCameraAgentComponent", "RTSCameraAgentComponent\RTSCameraAgentComponent.csproj", "{D77CB06E-D551-4865-A467-396B4D074990}"
-EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "BasicSharedLibrary", "RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.shproj", "{035A7C54-5161-4057-BB0D-20D39A607B50}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MissionLibrary", "RTSCamera.Shared\MissionLibrary\MissionLibrary.csproj", "{2384DF39-41F4-4419-9812-B99A70AB7B46}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTS.Framework", "RTS.Framework\RTS.Framework.csproj", "{20EC5133-6927-46EC-B020-ABD5D0A7E4F3}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MissionSharedLibrary", "RTSCamera.Shared\MissionSharedLibrary\MissionSharedLibrary.shproj", "{BB80A10D-E971-4C13-8EA6-F31EF29BA86D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTS.Engine", "RTS.Engine\RTS.Engine.csproj", "{44F3923A-061A-4C46-95C0-4878887FC8BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTS.Engine.VM", "RTS.Engine.VM\RTS.Engine.VM.csproj", "{B556EF55-8BCB-4032-A2A8-F2BE46BF629E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTS.Engine.API", "RTS.Engine.API\RTS.Engine.API.csproj", "{6A9986E9-8D86-4655-B8C4-4B5CA764182A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTS.Services.Widgets", "RTS.Services.Widgets\RTS.Services.Widgets.csproj", "{7672A093-B35A-4DA9-B37C-A89DC859FA9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTS.Services.MisssionLogics", "RTS.Services.MisssionLogics\RTS.Services.MisssionLogics.csproj", "{AF7DA186-2AC9-45ED-8BD0-946D36BF2853}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTS.Services.MissionViews", "RTS.Services.MissionViews\RTS.Services.MissionViews.csproj", "{064DA897-83AA-47EB-AA94-C703A9012909}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTS.Services.Runner", "RTS.Services.Runner\RTS.Services.Runner.csproj", "{BAE351BA-B99D-4E54-948C-5F0F4EB67A1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTS.Services.MissionMenu", "RTS.Services.MissionMenu\RTS.Services.MissionMenu.csproj", "{5E574A26-4082-4E19-A368-CCC4CBFBFD64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTSCommandSystem", "RTSCommandSystem\RTSCommandSystem.csproj", "{E4A04EF8-23F3-4BB2-BFBA-BFBA36D01046}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTS.Services.FreeCamera", "RTS.Services.FreeCamera\RTS.Services.FreeCamera.csproj", "{317FF12C-1D5C-429E-B227-DE6C580F6600}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTS.Services.FormationCommands", "RTS.Services.FormationCommands\RTS.Services.FormationCommands.csproj", "{D6E3DD7F-D9E7-455C-965A-F4F706895ED2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTS.Engine.AgentComponents", "RTS.Engine.AgentComponents\RTS.Engine.AgentComponents.csproj", "{F985E33F-F082-4F55-9517-773A714D5C93}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems*{035a7c54-5161-4057-bb0d-20d39a607b50}*SharedItemsImports = 13
-		RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems*{2384df39-41f4-4419-9812-b99a70ab7b46}*SharedItemsImports = 5
-		RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems*{49b9a59e-5fe6-4a67-860d-a1eb9587d34f}*SharedItemsImports = 5
-		RTSCamera.Shared\MissionSharedLibrary\MissionSharedLibrary.projitems*{49b9a59e-5fe6-4a67-860d-a1eb9587d34f}*SharedItemsImports = 5
-		RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems*{7c249cda-7bd3-4e67-ac00-3e59e0ffd07f}*SharedItemsImports = 5
-		RTSCamera.Shared\MissionSharedLibrary\MissionSharedLibrary.projitems*{7c249cda-7bd3-4e67-ac00-3e59e0ffd07f}*SharedItemsImports = 5
-		RTSCamera.Shared\MissionSharedLibrary\MissionSharedLibrary.projitems*{bb80a10d-e971-4c13-8ea6-f31ef29ba86d}*SharedItemsImports = 13
-		RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems*{d77cb06e-d551-4865-a467-396b4d074990}*SharedItemsImports = 5
+		RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems*{064da897-83aa-47eb-aa94-c703a9012909}*SharedItemsImports = 4
+		RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems*{317ff12c-1d5c-429e-b227-de6c580f6600}*SharedItemsImports = 4
+		RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems*{44f3923a-061a-4c46-95c0-4878887fc8bf}*SharedItemsImports = 4
+		RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems*{5e574a26-4082-4e19-a368-ccc4cbfbfd64}*SharedItemsImports = 4
+		RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems*{6a9986e9-8d86-4655-b8c4-4b5ca764182a}*SharedItemsImports = 4
+		RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems*{7672a093-b35a-4da9-b37c-a89dc859fa9e}*SharedItemsImports = 4
+		RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems*{af7da186-2ac9-45ed-8bd0-946d36bf2853}*SharedItemsImports = 4
+		RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems*{b556ef55-8bcb-4032-a2a8-f2be46bf629e}*SharedItemsImports = 4
+		RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems*{bae351ba-b99d-4e54-948c-5f0f4eb67a1e}*SharedItemsImports = 4
+		RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems*{d6e3dd7f-d9e7-455c-965a-f4f706895ed2}*SharedItemsImports = 4
+		RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems*{e4a04ef8-23f3-4bb2-bfba-bfba36d01046}*SharedItemsImports = 4
+		RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems*{f985e33f-f082-4f55-9517-773a714d5c93}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7C249CDA-7BD3-4E67-AC00-3E59E0FFD07F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7C249CDA-7BD3-4E67-AC00-3E59E0FFD07F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7C249CDA-7BD3-4E67-AC00-3E59E0FFD07F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7C249CDA-7BD3-4E67-AC00-3E59E0FFD07F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{49B9A59E-5FE6-4A67-860D-A1EB9587D34F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{49B9A59E-5FE6-4A67-860D-A1EB9587D34F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{49B9A59E-5FE6-4A67-860D-A1EB9587D34F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{49B9A59E-5FE6-4A67-860D-A1EB9587D34F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D77CB06E-D551-4865-A467-396B4D074990}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D77CB06E-D551-4865-A467-396B4D074990}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D77CB06E-D551-4865-A467-396B4D074990}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D77CB06E-D551-4865-A467-396B4D074990}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2384DF39-41F4-4419-9812-B99A70AB7B46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2384DF39-41F4-4419-9812-B99A70AB7B46}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2384DF39-41F4-4419-9812-B99A70AB7B46}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2384DF39-41F4-4419-9812-B99A70AB7B46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20EC5133-6927-46EC-B020-ABD5D0A7E4F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20EC5133-6927-46EC-B020-ABD5D0A7E4F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20EC5133-6927-46EC-B020-ABD5D0A7E4F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20EC5133-6927-46EC-B020-ABD5D0A7E4F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44F3923A-061A-4C46-95C0-4878887FC8BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44F3923A-061A-4C46-95C0-4878887FC8BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44F3923A-061A-4C46-95C0-4878887FC8BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44F3923A-061A-4C46-95C0-4878887FC8BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B556EF55-8BCB-4032-A2A8-F2BE46BF629E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B556EF55-8BCB-4032-A2A8-F2BE46BF629E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B556EF55-8BCB-4032-A2A8-F2BE46BF629E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B556EF55-8BCB-4032-A2A8-F2BE46BF629E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A9986E9-8D86-4655-B8C4-4B5CA764182A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A9986E9-8D86-4655-B8C4-4B5CA764182A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A9986E9-8D86-4655-B8C4-4B5CA764182A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A9986E9-8D86-4655-B8C4-4B5CA764182A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7672A093-B35A-4DA9-B37C-A89DC859FA9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7672A093-B35A-4DA9-B37C-A89DC859FA9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7672A093-B35A-4DA9-B37C-A89DC859FA9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7672A093-B35A-4DA9-B37C-A89DC859FA9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF7DA186-2AC9-45ED-8BD0-946D36BF2853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF7DA186-2AC9-45ED-8BD0-946D36BF2853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF7DA186-2AC9-45ED-8BD0-946D36BF2853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF7DA186-2AC9-45ED-8BD0-946D36BF2853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{064DA897-83AA-47EB-AA94-C703A9012909}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{064DA897-83AA-47EB-AA94-C703A9012909}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{064DA897-83AA-47EB-AA94-C703A9012909}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{064DA897-83AA-47EB-AA94-C703A9012909}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAE351BA-B99D-4E54-948C-5F0F4EB67A1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAE351BA-B99D-4E54-948C-5F0F4EB67A1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAE351BA-B99D-4E54-948C-5F0F4EB67A1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAE351BA-B99D-4E54-948C-5F0F4EB67A1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E574A26-4082-4E19-A368-CCC4CBFBFD64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E574A26-4082-4E19-A368-CCC4CBFBFD64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E574A26-4082-4E19-A368-CCC4CBFBFD64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E574A26-4082-4E19-A368-CCC4CBFBFD64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4A04EF8-23F3-4BB2-BFBA-BFBA36D01046}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4A04EF8-23F3-4BB2-BFBA-BFBA36D01046}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4A04EF8-23F3-4BB2-BFBA-BFBA36D01046}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4A04EF8-23F3-4BB2-BFBA-BFBA36D01046}.Release|Any CPU.Build.0 = Release|Any CPU
+		{317FF12C-1D5C-429E-B227-DE6C580F6600}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{317FF12C-1D5C-429E-B227-DE6C580F6600}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{317FF12C-1D5C-429E-B227-DE6C580F6600}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{317FF12C-1D5C-429E-B227-DE6C580F6600}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6E3DD7F-D9E7-455C-965A-F4F706895ED2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6E3DD7F-D9E7-455C-965A-F4F706895ED2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6E3DD7F-D9E7-455C-965A-F4F706895ED2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6E3DD7F-D9E7-455C-965A-F4F706895ED2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F985E33F-F082-4F55-9517-773A714D5C93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F985E33F-F082-4F55-9517-773A714D5C93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F985E33F-F082-4F55-9517-773A714D5C93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F985E33F-F082-4F55-9517-773A714D5C93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

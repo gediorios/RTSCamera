@@ -14,10 +14,6 @@
   <Import Project="$(MSBuildProjectDirectory)\*.props" />
 
   <ItemGroup>
-    <ProjectReference Include="..\RTSCamera.Shared\MissionLibrary\MissionLibrary.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="SandBox">
       <HintPath>$(GamePath)Modules\SandBox\bin\Win64_Shipping_Client\SandBox.dll</HintPath>
     </Reference>
