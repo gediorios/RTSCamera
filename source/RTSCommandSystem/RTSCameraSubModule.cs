@@ -8,6 +8,7 @@ using RTS.Framework.Domain;
 using RTSCamera.CampaignGame.Behavior;
 using RTSCamera.CommandSystem.Config;
 using RTSCamera.Config;
+using RTSCamera.MissionStartingHandler;
 using RTSCamera.Patch;
 using RTSCamera.Patch.Fix;
 using RTSCamera.src.Patch.Fix;
@@ -42,8 +43,8 @@ namespace RTSCamera
                 Initialize();
                 Module.CurrentModule.GlobalTextManager.LoadGameTexts(
                     ModuleHelper.GetXmlPath(Constants.ModuleId, "module_strings"));
-                Module.CurrentModule.GlobalTextManager.LoadGameTexts(
-                    ModuleHelper.GetXmlPath(Constants.ModuleId, "MissionLibrary"));
+                /*Module.CurrentModule.GlobalTextManager.LoadGameTexts(
+                    ModuleHelper.GetXmlPath(Constants.ModuleId, "MissionLibrary"));*/
 
                 _successPatch = true;
                 _harmony.Patch(
@@ -159,7 +160,8 @@ namespace RTSCamera
                 ObjectVersion<AMissionStartingHandler>.Create(() => new RTSCameraAgentComponent.MissionStartingHandler(),
                     new Version(1, 0, 0)), "RTSCameraAgentComponent.MissionStartingHandler");*/
 
-            RTSEngineState.GetProvider<AMissionStartingManager>().AddHandler(new MissionStartingHandler.MissionStartingHandler());
+            Initializer.RegisterProvider(() => new MissionStartingHandlerAdder(), new Version(1, 0)); 
+            //RTSEngineState.GetProvider<AMissionStartingManager>().AddHandler(new MissionStartingHandler.MissionStartingHandler());
 
             var menuClassCollection = AMenuManager.Get().MenuClassCollection;
 
@@ -185,7 +187,7 @@ namespace RTSCamera
             base.OnGameStart(game, gameStarterObject);
 
             game.GameTextManager.LoadGameTexts(ModuleHelper.GetXmlPath(Constants.ModuleId, "module_strings"));
-            game.GameTextManager.LoadGameTexts(ModuleHelper.GetXmlPath(Constants.ModuleId, "MissionLibrary"));
+            //game.GameTextManager.LoadGameTexts(ModuleHelper.GetXmlPath(Constants.ModuleId, "MissionLibrary"));
             //AddCampaignBehavior(gameStarterObject);
         }
 

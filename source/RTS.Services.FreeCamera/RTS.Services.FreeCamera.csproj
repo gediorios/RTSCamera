@@ -7,8 +7,8 @@
     <ProjectGuid>{317FF12C-1D5C-429E-B227-DE6C580F6600}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RTS.Engine.View</RootNamespace>
-    <AssemblyName>RTS.Engine.View</AssemblyName>
+    <RootNamespace>RTS.Services.FreeCamera</RootNamespace>
+    <AssemblyName>RTS.Services.FreeCamera</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

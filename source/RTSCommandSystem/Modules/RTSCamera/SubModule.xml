@@ -15,7 +15,7 @@
 	<SubModules>
 		<SubModule>
 			<Name value="RTSCameraSubModule"/>
-			<DLLName value="RTSCamera.dll"/>
+			<DLLName value="RTSCommandSystem.dll"/>
 			<SubModuleClassType value="RTSCamera.RTSCameraSubModule"/>
 			<Tags>
 				<Tag key="DedicatedServerType" value="none" />

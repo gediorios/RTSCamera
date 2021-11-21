@@ -28,6 +28,7 @@ namespace RTSCamera.Patch
 
             return true;
         }
+
         public static bool Prefix_GetShouldCrosshairBeVisible(ref bool __result)
         {
             if (RTSCameraLogic.Instance.SwitchFreeCameraLogic.IsSpectatorCamera)

@@ -23,13 +23,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTS.Services.Runner", "RTS.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTS.Services.MissionMenu", "RTS.Services.MissionMenu\RTS.Services.MissionMenu.csproj", "{5E574A26-4082-4E19-A368-CCC4CBFBFD64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTSCommandSystem", "RTSCommandSystem\RTSCommandSystem.csproj", "{E4A04EF8-23F3-4BB2-BFBA-BFBA36D01046}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTS.Services.FreeCamera", "RTS.Services.FreeCamera\RTS.Services.FreeCamera.csproj", "{317FF12C-1D5C-429E-B227-DE6C580F6600}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTS.Services.FormationCommands", "RTS.Services.FormationCommands\RTS.Services.FormationCommands.csproj", "{D6E3DD7F-D9E7-455C-965A-F4F706895ED2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTS.Engine.AgentComponents", "RTS.Engine.AgentComponents\RTS.Engine.AgentComponents.csproj", "{F985E33F-F082-4F55-9517-773A714D5C93}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RTSCommandSystem", "RTSCommandSystem\RTSCommandSystem.csproj", "{67BE5B8F-D06B-4BBC-9EB8-67D7DCF77D92}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -38,13 +38,13 @@ Global
 		RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems*{317ff12c-1d5c-429e-b227-de6c580f6600}*SharedItemsImports = 4
 		RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems*{44f3923a-061a-4c46-95c0-4878887fc8bf}*SharedItemsImports = 4
 		RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems*{5e574a26-4082-4e19-a368-ccc4cbfbfd64}*SharedItemsImports = 4
+		RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems*{67be5b8f-d06b-4bbc-9eb8-67d7dcf77d92}*SharedItemsImports = 5
 		RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems*{6a9986e9-8d86-4655-b8c4-4b5ca764182a}*SharedItemsImports = 4
 		RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems*{7672a093-b35a-4da9-b37c-a89dc859fa9e}*SharedItemsImports = 4
 		RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems*{af7da186-2ac9-45ed-8bd0-946d36bf2853}*SharedItemsImports = 4
 		RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems*{b556ef55-8bcb-4032-a2a8-f2be46bf629e}*SharedItemsImports = 4
 		RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems*{bae351ba-b99d-4e54-948c-5f0f4eb67a1e}*SharedItemsImports = 4
 		RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems*{d6e3dd7f-d9e7-455c-965a-f4f706895ed2}*SharedItemsImports = 4
-		RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems*{e4a04ef8-23f3-4bb2-bfba-bfba36d01046}*SharedItemsImports = 4
 		RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems*{f985e33f-f082-4f55-9517-773a714d5c93}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -88,10 +88,6 @@ Global
 		{5E574A26-4082-4E19-A368-CCC4CBFBFD64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E574A26-4082-4E19-A368-CCC4CBFBFD64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E574A26-4082-4E19-A368-CCC4CBFBFD64}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E4A04EF8-23F3-4BB2-BFBA-BFBA36D01046}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E4A04EF8-23F3-4BB2-BFBA-BFBA36D01046}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E4A04EF8-23F3-4BB2-BFBA-BFBA36D01046}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E4A04EF8-23F3-4BB2-BFBA-BFBA36D01046}.Release|Any CPU.Build.0 = Release|Any CPU
 		{317FF12C-1D5C-429E-B227-DE6C580F6600}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{317FF12C-1D5C-429E-B227-DE6C580F6600}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{317FF12C-1D5C-429E-B227-DE6C580F6600}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -104,6 +100,10 @@ Global
 		{F985E33F-F082-4F55-9517-773A714D5C93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F985E33F-F082-4F55-9517-773A714D5C93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F985E33F-F082-4F55-9517-773A714D5C93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67BE5B8F-D06B-4BBC-9EB8-67D7DCF77D92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67BE5B8F-D06B-4BBC-9EB8-67D7DCF77D92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67BE5B8F-D06B-4BBC-9EB8-67D7DCF77D92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67BE5B8F-D06B-4BBC-9EB8-67D7DCF77D92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

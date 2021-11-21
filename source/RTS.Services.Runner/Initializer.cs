@@ -42,8 +42,8 @@ namespace MissionSharedLibrary
 
             RTSEngineState.SecondInitialize();
             AGameKeyCategoryManager.RegisterGameKeyCategory();
-            RTSCameraGameKeyCategory.RegisterGameKeyCategory();
-            CommandSystemGameKeyCategory.RegisterGameKeyCategory();
+            //RTSCameraGameKeyCategory.RegisterGameKeyCategory();
+            //CommandSystemGameKeyCategory.RegisterGameKeyCategory();
 
             return true;
         }

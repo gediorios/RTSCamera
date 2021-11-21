@@ -1,4 +1,6 @@
-﻿using MissionSharedLibrary.Controller;
+﻿using MissionLibrary;
+using MissionLibrary.Controller;
+using MissionSharedLibrary.Controller;
 using RTSCamera.CommandSystem.Config;
 using RTSCamera.CommandSystem.Logic;
 using RTSCamera.CommandSystem.Patch;
@@ -12,6 +14,14 @@ using static MissionLibrary.Controller.AMissionStartingManager;
 
 namespace RTSCamera.MissionStartingHandler
 {
+    public class MissionStartingHandlerAdder : ADefaultMissionStartingHandlerAdder
+    {
+        public MissionStartingHandlerAdder()
+        {
+            RTSEngineState.GetProvider<AMissionStartingManager>().AddHandler(new MissionStartingHandler());
+        }
+    }
+
     public class MissionStartingHandler : AMissionStartingHandler
     {
         public override void OnCreated(MissionView entranceView)

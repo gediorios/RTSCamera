@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "RTSCommandSystem": {
+      "commandName": "Project"
+    },
+    "Bannerlord launch ": {
+      "commandName": "Executable",
+      "executablePath": "E:\\Games\\Steam\\steamapps\\common\\Mount & Blade II Bannerlord\\bin\\Win64_Shipping_Client\\TaleWorlds.MountAndBlade.Launcher.exe",
+      "workingDirectory": "E:\\Games\\Steam\\steamapps\\common\\Mount & Blade II Bannerlord\\bin\\Win64_Shipping_Client"
+    }
+  }
+}
