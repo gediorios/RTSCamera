@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7672A093-B35A-4DA9-B37C-A89DC859FA9E}</ProjectGuid>
+    <ProjectGuid>{064DA897-83AA-47EB-AA94-C703A9012909}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RTS.Services.Widgets</RootNamespace>
-    <AssemblyName>RTS.Services.Widgets</AssemblyName>
+    <RootNamespace>RTS.SubModule.MissionViews</RootNamespace>
+    <AssemblyName>RTS.SubModule.MissionViews</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -149,9 +149,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MissionLibraryGameKeyConfigItemWidget.cs" />
-    <Compile Include="MissionLibraryGameKeyConfigWidget.cs" />
+    <Compile Include="AddMissionBehaviourView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MissionViewsSubModule.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RTS.Engine.API\RTS.Engine.API.csproj">
+      <Project>{6a9986e9-8d86-4655-b8c4-4b5ca764182a}</Project>
+      <Name>RTS.Engine.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RTS.Engine.VM\RTS.Engine.VM.csproj">
+      <Project>{b556ef55-8bcb-4032-a2a8-f2be46bf629e}</Project>
+      <Name>RTS.Engine.VM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RTS.Engine\RTS.Engine.csproj">
+      <Project>{44f3923a-061a-4c46-95c0-4878887fc8bf}</Project>
+      <Name>RTS.Engine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RTS.Framework\RTS.Framework.csproj">
+      <Project>{20EC5133-6927-46EC-B020-ABD5D0A7E4F3}</Project>
+      <Name>RTS.Framework</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="..\RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

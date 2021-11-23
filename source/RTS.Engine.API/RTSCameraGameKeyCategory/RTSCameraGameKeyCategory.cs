@@ -11,12 +11,7 @@ namespace RTSCamera.Config.HotKey
 {
     public class RTSCameraGameKeyCategory
     {
-        public static AGameKeyCategory Category => AGameKeyCategoryManager.Get().GetCategory(Constants.RTSCameraHotKeyCategoryId);
-
-        /*public static void RegisterGameKeyCategory()
-        {
-            AGameKeyCategoryManager.Get()?.AddCategory(CreateCategory, new Version(1, 0));
-        }*/
+        public static AGameKeyCategory Category => AGameKeyCategoryManager.Get().GetCategory(Constants.DefaultHotKeyCategoryId);
 
         public static IGameKeySequence GetKey(Constants.GameKeyEnum key)
         {

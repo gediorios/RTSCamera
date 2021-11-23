@@ -1,44 +1,48 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{44F3923A-061A-4C46-95C0-4878887FC8BF}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RTS.Engine</RootNamespace>
-    <AssemblyName>RTS.Engine</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
+    <TargetFramework>net472</TargetFramework>
+    <ProcessorArchitecture>amd64</ProcessorArchitecture>
+    <LangVersion>8</LangVersion>
+    <AssemblyName>RTS.SubModule.CommandSystem</AssemblyName>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
+    <Compile Remove="DI\**" />
+    <EmbeddedResource Remove="DI\**" />
+    <None Remove="DI\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="KdTree" Version="1.4.1" />
+    <PackageReference Include="Lib.Harmony" Version="2.1.1" />
+  </ItemGroup>
+
+  <Import Project="..\RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems" Label="Shared" />
+	
+  <Import Project="$(MSBuildProjectDirectory)\*.props" />
+  <ItemGroup>
+	  <DotNetCliToolReference Include="dotnet-md2html" Version="1.0.0.1-preview1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RTS.Engine.AgentComponents\RTS.Engine.AgentComponents.csproj" />
+    <ProjectReference Include="..\RTS.Engine.API\RTS.Engine.API.csproj" />
+    <ProjectReference Include="..\RTS.Engine.VM\RTS.Engine.VM.csproj" />
+    <ProjectReference Include="..\RTS.Engine\RTS.Engine.csproj" />
+    <ProjectReference Include="..\RTS.Framework\RTS.Framework.csproj" />
+    <ProjectReference Include="..\RTS.Services.FormationCommands\RTS.Services.FormationCommands.csproj" />
+    <ProjectReference Include="..\RTS.Services.FreeCamera\RTS.Services.FreeCamera.csproj" />
+    <ProjectReference Include="..\RTS.Services.MissionMenu\RTS.SubModule.MissionMenu.csproj" />
+    <ProjectReference Include="..\RTS.Services.MisssionLogics\RTS.Services.MisssionLogics.csproj" />
+    <ProjectReference Include="..\RTS.Services.Runner\RTS.Services.Runner.csproj" />
+    <ProjectReference Include="..\RTS.SubModule.MissionMenu\RTS.SubModule.MissionMenu.csproj" />
+    <ProjectReference Include="..\RTS.SubModule.MissionViews\RTS.SubModule.MissionViews.csproj" />
+    <ProjectReference Include="..\RTS.SubModule.Widgets\RTS.SubModule.Widgets.csproj" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="SandBox">
       <HintPath>$(GamePath)Modules\SandBox\bin\Win64_Shipping_Client\SandBox.dll</HintPath>
     </Reference>
@@ -114,6 +118,9 @@
     <Reference Include="TaleWorlds.Localization">
       <HintPath>$(GamePath)bin\Win64_Shipping_Client\TaleWorlds.Localization.dll</HintPath>
     </Reference>
+    <Reference Include="TaleWorlds.ModuleManager">
+      <HintPath>$(GamePath)bin\Win64_Shipping_Client\TaleWorlds.ModuleManager.dll</HintPath>
+    </Reference>
     <Reference Include="TaleWorlds.MountAndBlade">
       <HintPath>$(GamePath)bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.dll</HintPath>
     </Reference>
@@ -149,37 +156,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configs\MissionConfigBase.cs" />
-    <Compile Include="Configs\RTSCameraConfig.cs" />
-    <Compile Include="Configs\RTSCameraConfigBase.cs" />
-    <Compile Include="Events\MissionEvents.cs" />
-    <Compile Include="Extensions\IMissionExtension.cs" />
-    <Compile Include="InputSystem\AGameKeyCategory.cs" />
-    <Compile Include="InputSystem\GameKeys\CommandSystemConfig.cs" />
-    <Compile Include="InputSystem\GameKeys\CommandSystemConfigExtension.cs" />
-    <Compile Include="InputSystem\GameKeys\CommandSystemGameKeyConfig.cs" />
-    <Compile Include="InputSystem\GameKeys\GameKeyCategory.cs" />
-    <Compile Include="InputSystem\GameKeys\GameKeyConfig.cs" />
-    <Compile Include="InputSystem\GameKeys\GameKeyConfigBase.cs" />
-    <Compile Include="InputSystem\GameKeys\GameKeySequence.cs" />
-    <Compile Include="InputSystem\GameKeys\GeneralGameKeyConfig.cs" />
-    <Compile Include="InputSystem\GameKeys\IGameKeyConfig.cs" />
-    <Compile Include="InputSystem\GameKeys\SerializedGameKeyCategory.cs" />
-    <Compile Include="InputSystem\IGameKeySequence.cs" />
-    <Compile Include="InputSystem\IHotKeySetter.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RTSEngineState.cs" />
-    <Compile Include="Utility.cs" />
+    <Folder Include="Properties\" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\RTS.Framework\RTS.Framework.csproj">
-      <Project>{20ec5133-6927-46ec-b020-abd5d0a7e4f3}</Project>
-      <Name>RTS.Framework</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="InputSystem\Constants\" />
-  </ItemGroup>
-  <Import Project="..\RTSCamera.Shared\BasicSharedLibrary\BasicSharedLibrary.projitems" Label="Shared" />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
+  <Target Name="RemoveModulePackageDir" AfterTargets="BeforeBuild">
+    <Exec Command="rmdir &quot;$(ModulePackagePath)&quot; /s /q" />
+  </Target>
+  
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy &quot;$(TargetDir)0Harmony.dll&quot; &quot;$(ModulePackagePath)\bin\Win64_Shipping_Client\&quot; /C /I /Y /F" />
+	<Exec Command="xcopy &quot;$(TargetDir)KdTreeLib.dll&quot; &quot;$(ModulePackagePath)\bin\Win64_Shipping_Client\&quot; /C /I /Y /F" />
+	<Exec Command="xcopy &quot;$(TargetDir)RTS.Engine.dll&quot; &quot;$(ModulePackagePath)\bin\Win64_Shipping_Client\&quot; /C /I /Y /F" />
+	<Exec Command="xcopy &quot;$(TargetDir)RTS.Engine.AgentComponents.dll&quot; &quot;$(ModulePackagePath)\bin\Win64_Shipping_Client\&quot; /C /I /Y /F" />
+	<Exec Command="xcopy &quot;$(TargetDir)RTS.Engine.API.dll&quot; &quot;$(ModulePackagePath)\bin\Win64_Shipping_Client\&quot; /C /I /Y /F" />
+	<Exec Command="xcopy &quot;$(TargetDir)RTS.Engine.VM.dll&quot; &quot;$(ModulePackagePath)\bin\Win64_Shipping_Client\&quot; /C /I /Y /F" />
+	<Exec Command="xcopy &quot;$(TargetDir)RTS.Framework.dll&quot; &quot;$(ModulePackagePath)\bin\Win64_Shipping_Client\&quot; /C /I /Y /F" />
+	<Exec Command="xcopy &quot;$(TargetDir)RTS.Services.FormationCommands.dll&quot; &quot;$(ModulePackagePath)\bin\Win64_Shipping_Client\&quot; /C /I /Y /F" />
+	<Exec Command="xcopy &quot;$(TargetDir)RTS.Services.FreeCamera.dll&quot; &quot;$(ModulePackagePath)\bin\Win64_Shipping_Client\&quot; /C /I /Y /F" />
+	<Exec Command="xcopy &quot;$(TargetDir)RTS.Services.MisssionLogics.dll&quot; &quot;$(ModulePackagePath)\bin\Win64_Shipping_Client\&quot; /C /I /Y /F" />
+	<Exec Command="xcopy &quot;$(TargetDir)RTS.Services.Runner.dll&quot; &quot;$(ModulePackagePath)\bin\Win64_Shipping_Client\&quot; /C /I /Y /F" />
+	<Exec Command="xcopy &quot;$(TargetDir)RTS.SubModule.MissionMenu.dll&quot; &quot;$(ModulePackagePath)\bin\Win64_Shipping_Client\&quot; /C /I /Y /F" />
+	<Exec Command="xcopy &quot;$(TargetDir)RTS.SubModule.MissionViews.dll&quot; &quot;$(ModulePackagePath)\bin\Win64_Shipping_Client\&quot; /C /I /Y /F" />
+	<Exec Command="xcopy &quot;$(TargetDir)RTS.SubModule.Widgets.dll&quot; &quot;$(ModulePackagePath)\bin\Win64_Shipping_Client\&quot; /C /I /Y /F" />
+    <Exec Command="xcopy &quot;$(TargetPath)&quot; &quot;$(ModulePackagePath)bin\Win64_Shipping_Client\&quot; /C /I /Y /F" />
+    <Exec Command="xcopy &quot;$(ProjectDir)Modules\.&quot; &quot;$(PackagePath)&quot; /E /C /I /Y /F" />
+    <Exec Command="xcopy &quot;$(ModulePackagePath).&quot; &quot;$(GamePath)Modules\$(ModuleAlias) &quot; /E /C /I /Y /F" />
+  </Target>
+
 </Project>

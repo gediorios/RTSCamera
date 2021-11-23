@@ -4,6 +4,7 @@
     {
         public enum GameKeyEnum
         {
+            OpenMenu,
             Pause,
             SlowMotion,
             FreeCamera,
@@ -22,9 +23,13 @@
             NumberOfGameKeyEnums
         }
 
-        public const string ModuleId = "RTSCamera";
+        public const string ModuleId = "RTSCommandSystem";
 
-        public const string RTSCameraHotKeyCategoryId = "RTSCameraHotKey";
 
+        public const string DefaultHotKeyCategoryId = "DefaultCommandSystemHotKeys";
+
+        public const string FreeCameraHotKeyCategoryId = "FreeCameraHotKey";
+
+        public const string FormationCommandsHotKeyCategoryId = "FormationCommandsHotKey";
     }
 }

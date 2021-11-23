@@ -151,7 +151,6 @@
   <ItemGroup>
     <Compile Include="DefaultMissionStartingHandler.cs" />
     <Compile Include="Initializer.cs" />
-    <Compile Include="MenuManager.cs" />
     <Compile Include="MissionStartingManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -171,14 +170,6 @@
     <ProjectReference Include="..\RTS.Framework\RTS.Framework.csproj">
       <Project>{20EC5133-6927-46EC-B020-ABD5D0A7E4F3}</Project>
       <Name>RTS.Framework</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RTS.Services.MissionMenu\RTS.Services.MissionMenu.csproj">
-      <Project>{5E574A26-4082-4E19-A368-CCC4CBFBFD64}</Project>
-      <Name>RTS.Services.MissionMenu</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RTS.Services.MissionViews\RTS.Services.MissionViews.csproj">
-      <Project>{064da897-83aa-47eb-aa94-c703a9012909}</Project>
-      <Name>RTS.Services.MissionViews</Name>
     </ProjectReference>
     <ProjectReference Include="..\RTS.Services.MisssionLogics\RTS.Services.MisssionLogics.csproj">
       <Project>{AF7DA186-2AC9-45ED-8BD0-946D36BF2853}</Project>

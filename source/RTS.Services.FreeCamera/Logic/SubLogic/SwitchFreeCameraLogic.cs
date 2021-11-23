@@ -109,7 +109,7 @@ namespace RTSCamera.Logic.SubLogic
                 CurrentPlayerFormation = Mission.MainAgent.Formation.FormationIndex;
             }
 
-            var freeCameraKey = AGameKeyCategoryManager.Get().GetCategory(Constants.RTSCameraHotKeyCategoryId).GetGameKeySequence((int)Constants.GameKeyEnum.FreeCamera);
+            var freeCameraKey = AGameKeyCategoryManager.Get().GetCategory(Constants.DefaultHotKeyCategoryId).GetGameKeySequence((int)Constants.GameKeyEnum.FreeCamera);
 
             if (freeCameraKey.IsKeyPressed(Mission.InputManager))
                 SwitchCamera();
@@ -224,7 +224,7 @@ namespace RTSCamera.Logic.SubLogic
                 }
                 else if (Mission.PlayerTeam?.ActiveAgents.Count > 0)
                 {
-                    var controlTroopKey = AGameKeyCategoryManager.Get().GetCategory(Constants.RTSCameraHotKeyCategoryId).GetGameKeySequence((int)Constants.GameKeyEnum.ControlTroop);
+                    var controlTroopKey = AGameKeyCategoryManager.Get().GetCategory(Constants.DefaultHotKeyCategoryId).GetGameKeySequence((int)Constants.GameKeyEnum.ControlTroop);
 
                     GameTexts.SetVariable("KeyName", controlTroopKey.ToSequenceString());
                     Utility.DisplayLocalizedText("str_rts_camera_control_troop_hint");

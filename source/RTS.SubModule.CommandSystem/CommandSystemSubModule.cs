@@ -4,6 +4,7 @@ using MissionLibrary.Controller;
 using MissionLibrary.View;
 using MissionSharedLibrary;
 using MissionSharedLibrary.Utilities;
+using MissionSharedLibrary.View;
 using RTS.Framework.Domain;
 using RTSCamera.CampaignGame.Behavior;
 using RTSCamera.CommandSystem.Config;
@@ -27,9 +28,9 @@ using TaleWorlds.MountAndBlade.View.Screen;
 using TaleWorlds.MountAndBlade.ViewModelCollection.HUD;
 using Module = TaleWorlds.MountAndBlade.Module;
 
-namespace RTSCamera
+namespace RTS.SubModule.CommandSystem
 {
-    public class RTSCameraSubModule : MBSubModuleBase
+    public class CommandSystemSubModule : MBSubModuleBase
     {
         private readonly Harmony _harmony = new Harmony("RTSCameraPatch");
         private bool _successPatch;
@@ -41,6 +42,7 @@ namespace RTSCamera
             try
             {
                 Initialize();
+
                 Module.CurrentModule.GlobalTextManager.LoadGameTexts(
                     ModuleHelper.GetXmlPath(Constants.ModuleId, "module_strings"));
                 /*Module.CurrentModule.GlobalTextManager.LoadGameTexts(
@@ -128,6 +130,9 @@ namespace RTSCamera
             if (!Initializer.Initialize(Constants.ModuleId))
                 return;
 
+            Initializer.RegisterProvider(() => new MenuManager(), new Version(1, 1));
+            Initializer.RegisterProvider(() => new MissionStartingHandlerAdder(), new Version(1, 0));
+
             //RTSCameraExtension.Clear();
         }
 
@@ -160,7 +165,6 @@ namespace RTSCamera
                 ObjectVersion<AMissionStartingHandler>.Create(() => new RTSCameraAgentComponent.MissionStartingHandler(),
                     new Version(1, 0, 0)), "RTSCameraAgentComponent.MissionStartingHandler");*/
 
-            Initializer.RegisterProvider(() => new MissionStartingHandlerAdder(), new Version(1, 0)); 
             //RTSEngineState.GetProvider<AMissionStartingManager>().AddHandler(new MissionStartingHandler.MissionStartingHandler());
 
             var menuClassCollection = AMenuManager.Get().MenuClassCollection;

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+	<Name value="RTS Command System"/>
+	<Id value="RTSCommandSystem"/>
+	<Version value="e3.10.2"/>
+	<SingleplayerModule value="true"/>
+	<MultiplayerModule value="false"/>
+	<DependedModules>
+		<DependedModule Id="Native" DependentVersion="e1.6.4" />
+		<DependedModule Id="SandBoxCore" DependentVersion="e1.6.4" />
+		<DependedModule Id="Sandbox" DependentVersion="e1.6.4" />
+		<DependedModule Id="CustomBattle" DependentVersion="e1.6.4"/>
+		<DependedModule Id="StoryMode" DependentVersion="e1.6.4" />
+	</DependedModules>
+	<SubModules>
+		<SubModule>
+			<Name value="CommandSystemSubModule"/>
+			<DLLName value="RTS.SubModule.CommandSystem.dll"/>
+			<SubModuleClassType value="RTS.SubModule.CommandSystem.CommandSystemSubModule"/>
+			<Tags>
+				<Tag key="DedicatedServerType" value="none" />
+				<Tag key="IsNoRenderModeElement" value="false" />
+			</Tags>
+		</SubModule>
+		<SubModule>
+			<Name value="MissionViewsSubModule"/>
+			<DLLName value="RTS.SubModule.MissionViews.dll"/>
+			<SubModuleClassType value="RTS.SubModule.MissionViews.MissionViewsSubModule"/>
+			<Tags>
+				<Tag key="DedicatedServerType" value="none" />
+				<Tag key="IsNoRenderModeElement" value="false" />
+			</Tags>
+		</SubModule>
+		<SubModule>
+			<Name value="MissionMenuSubModule"/>
+			<DLLName value="RTS.SubModule.MissionMenu.dll"/>
+			<SubModuleClassType value="RTS.SubModule.MissionMenu.MissionMenuSubModule"/>
+			<Tags>
+				<Tag key="DedicatedServerType" value="none" />
+				<Tag key="IsNoRenderModeElement" value="false" />
+			</Tags>
+		</SubModule>
+		<SubModule>
+			<Name value="WidgetsSubModule"/>
+			<DLLName value="RTS.SubModule.Widgets.dll"/>
+			<SubModuleClassType value="RTS.SubModule.Widgets.WidgetsSubModule"/>
+			<Tags>
+				<Tag key="DedicatedServerType" value="none" />
+				<Tag key="IsNoRenderModeElement" value="false" />
+			</Tags>
+		</SubModule>
+	</SubModules>
+	<Xmls/>
+</Module>

@@ -31,7 +31,7 @@ namespace RTSCamera.Logic.SubLogic
             if (!NativeConfig.CheatMode)
                 return;
 
-            var disableDeathKey = AGameKeyCategoryManager.Get().GetCategory(Constants.RTSCameraHotKeyCategoryId).GetGameKeySequence((int)Constants.GameKeyEnum.DisableDeath);
+            var disableDeathKey = AGameKeyCategoryManager.Get().GetCategory(Constants.DefaultHotKeyCategoryId).GetGameKeySequence((int)Constants.GameKeyEnum.DisableDeath);
 
             if (disableDeathKey.IsKeyPressed(Mission.InputManager))
             {

@@ -32,7 +32,7 @@ namespace RTSCamera.Logic.SubLogic
             if (!NativeConfig.CheatMode)
                 return;
 
-            var switchTeamKey = AGameKeyCategoryManager.Get().GetCategory(Constants.RTSCameraHotKeyCategoryId).GetGameKeySequence((int)Constants.GameKeyEnum.SwitchTeam);
+            var switchTeamKey = AGameKeyCategoryManager.Get().GetCategory(Constants.DefaultHotKeyCategoryId).GetGameKeySequence((int)Constants.GameKeyEnum.SwitchTeam);
 
             if (_config.SwitchTeamHotkeyEnabled && switchTeamKey.IsKeyPressed(Mission.InputManager))
                 SwapTeam();

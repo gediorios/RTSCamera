@@ -31,12 +31,12 @@ namespace RTSCamera.Logic.SubLogic
 
         public void OnMissionTick(float dt)
         {
-            var pauseKey = AGameKeyCategoryManager.Get().GetCategory(Constants.RTSCameraHotKeyCategoryId).GetGameKeySequence((int)Constants.GameKeyEnum.Pause);
+            var pauseKey = AGameKeyCategoryManager.Get().GetCategory(Constants.DefaultHotKeyCategoryId).GetGameKeySequence((int)Constants.GameKeyEnum.Pause);
 
             if (pauseKey.IsKeyPressed(Mission.InputManager))
                 TogglePause();
 
-            var slowMotionKey = AGameKeyCategoryManager.Get().GetCategory(Constants.RTSCameraHotKeyCategoryId).GetGameKeySequence((int)Constants.GameKeyEnum.SlowMotion);
+            var slowMotionKey = AGameKeyCategoryManager.Get().GetCategory(Constants.DefaultHotKeyCategoryId).GetGameKeySequence((int)Constants.GameKeyEnum.SlowMotion);
 
             if (slowMotionKey.IsKeyPressed(Mission.InputManager))
                 SetSlowMotionMode(!Mission.Scene.SlowMotionMode);

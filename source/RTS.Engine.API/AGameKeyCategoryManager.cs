@@ -6,7 +6,6 @@ using MissionLibrary.Provider;
 using MissionSharedLibrary.Config.HotKey;
 using MissionSharedLibrary.HotKey.Category;
 using MissionSharedLibrary.Provider;
-using RTS.Engine.InputSystem.Constants;
 using RTS.Framework.Domain;
 using RTSCamera.CommandSystem.Config.HotKey;
 using RTSCamera.Config.HotKey;
@@ -17,7 +16,7 @@ namespace MissionLibrary.HotKey
 {
     public abstract class AGameKeyCategoryManager : ATag<AGameKeyCategoryManager>
     {
-        public const string CategoryId = Constants.RTSCameraHotKeyCategoryId;//nameof(MissionLibrary) + nameof(GeneralGameKey);
+        public const string CategoryId = Constants.DefaultHotKeyCategoryId;//nameof(MissionLibrary) + nameof(GeneralGameKey);
 
         public static AGameKeyCategoryManager Get()
         {
@@ -26,40 +25,25 @@ namespace MissionLibrary.HotKey
 
         public static AGameKeyCategory GeneralGameKeyCategory => Get()?.GetCategory(CategoryId);
 
-        [NotNull]
-        public static AGameKeyCategory CreateGeneralGameKeyCategory()
+        public static GameKeyCategory CreateGameKeysCategory()
         {
-            var result = new GameKeyCategory(CategoryId, (int)GeneralGameKey.NumberOfGameKeyEnums, GeneralGameKeyConfig.Get());
+            var categoryId = Constants.DefaultHotKeyCategoryId;
+            var nativeCategory = HotKeyManager.GetCategory("CombatHotKeyCategory");
+            var result = new GameKeyCategory(Constants.DefaultHotKeyCategoryId, (int)Constants.GameKeyEnum.NumberOfGameKeyEnums, GameKeyConfig.Get());
 
-            result.AddGameKeySequence(new GameKeySequence((int)GeneralGameKey.OpenMenu,
-                nameof(GeneralGameKey.OpenMenu),
-                CategoryId, new List<InputKey>()
+            result.AddGameKeySequence(new GameKeySequence((int)GameKeyEnum.OpenMenu,
+                nameof(GameKeyEnum.OpenMenu),
+                categoryId, new List<InputKey>()
                 {
                     InputKey.L
                 }, true));
 
-            return result;
-        }
-
-        public static GameKeyCategory CreateCommandSystemGameKeyCategory()
-        {
-            var result = new GameKeyCategory(CategoryId,  (int)GameKeyEnum.NumberOfGameKeyEnums, CommandSystemGameKeyConfig.Get());
-
             result.AddGameKeySequence(new GameKeySequence((int)GameKeyEnum.SelectFormation,
                 nameof(GameKeyEnum.SelectFormation),
-                CategoryId, new List<InputKey>
+                categoryId, new List<InputKey>
                 {
                     InputKey.MiddleMouseButton
                 }));
-
-            return result;
-        }
-
-        public static GameKeyCategory CreateRTSCameraHotKeyCategory()
-        {
-            var categoryId = Constants.RTSCameraHotKeyCategoryId;
-            var nativeCategory = HotKeyManager.GetCategory("CombatHotKeyCategory");
-            var result = new GameKeyCategory(Constants.RTSCameraHotKeyCategoryId, (int)Constants.GameKeyEnum.NumberOfGameKeyEnums, GameKeyConfig.Get());
 
             result.AddGameKeySequence(new GameKeySequence((int)Constants.GameKeyEnum.Pause, nameof(Constants.GameKeyEnum.Pause),
                 categoryId, new List<InputKey>
@@ -148,23 +132,13 @@ namespace MissionLibrary.HotKey
             return result;
         }
 
-        public static void RegisterGameKeyCategory()
+        public static void RegisterGameKeys()
         {
             var AGameKeyCategoryManager = Get();
 
             if (AGameKeyCategoryManager != null) 
-            {
-                AGameKeyCategoryManager.AddCategory(ObjectVersion<AGameKeyCategory>.Create(() => CreateGeneralGameKeyCategory(), new Version(1, 0)));
-                AGameKeyCategoryManager.AddCategory(ObjectVersion<AGameKeyCategory>.Create(() => CreateCommandSystemGameKeyCategory(), new Version(1, 0)));
-                AGameKeyCategoryManager.AddCategory(ObjectVersion<AGameKeyCategory>.Create(() => CreateRTSCameraHotKeyCategory(), new Version(1, 0)));
-            }
+                AGameKeyCategoryManager.AddCategory(ObjectVersion<AGameKeyCategory>.Create(() => CreateGameKeysCategory(), new Version(1, 0)));
         }
-
-        public static IGameKeySequence GetKey(GeneralGameKey key)
-        {
-            return GeneralGameKeyCategory.GetGameKeySequence((int)key);
-        }
-
 
         public abstract Dictionary<string, IObjectVersion<AGameKeyCategory>> Categories { get; }
         public abstract void AddCategory(IObjectVersion<AGameKeyCategory> category, bool addOnlyWhenMissing = true);

@@ -2,8 +2,8 @@
 using MissionLibrary.Event;
 using MissionLibrary.HotKey;
 using MissionLibrary.View;
-using RTS.Engine.InputSystem.Constants;
 using RTS.Framework.Domain;
+using static RTS.Framework.Domain.Constants;
 
 namespace MissionSharedLibrary.View
 {
@@ -17,7 +17,7 @@ namespace MissionSharedLibrary.View
         public override void OnMissionScreenTick(float dt)
         {
             base.OnMissionScreenTick(dt);
-            var openMenuKey = AGameKeyCategoryManager.Get().GetCategory(Constants.RTSCameraHotKeyCategoryId).GetGameKeySequence((int)GeneralGameKey.OpenMenu);
+            var openMenuKey = AGameKeyCategoryManager.Get().GetCategory(Constants.DefaultHotKeyCategoryId).GetGameKeySequence((int)GameKeyEnum.OpenMenu);
 
             if (IsActivated)
             {

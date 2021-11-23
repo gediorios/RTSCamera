@@ -1,12 +1,17 @@
 ﻿using MissionLibrary;
 using MissionLibrary.Controller;
+using MissionLibrary.View;
 using MissionSharedLibrary.Controller;
+using MissionSharedLibrary.View;
+using MissionSharedLibrary.View.HotKey;
 using RTSCamera.CommandSystem.Config;
 using RTSCamera.CommandSystem.Logic;
 using RTSCamera.CommandSystem.Patch;
 using RTSCamera.CommandSystem.View;
 using RTSCamera.Logic;
 using RTSCamera.View;
+using RTSCameraAgentComponent;
+using System;
 using System.Collections.Generic;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.View.Missions;
@@ -32,6 +37,10 @@ namespace RTSCamera.MissionStartingHandler
                 new RTSCameraSelectCharacterView(),
                 new RTSCameraLogic(),
 
+                new OptionView(24, new Version(1, 1, 0)),
+                new GameKeyConfigView(),
+                new ComponentAdder(),
+
                 new HideHUDView(),
                 new FlyCameraMissionView(),
 
@@ -39,6 +48,11 @@ namespace RTSCamera.MissionStartingHandler
                 new CommandSystemOrderTroopPlacer(),
                 new DragWhenCommandView()
             };
+
+
+            //MissionStartingManager.AddMissionBehaviour(entranceView, AMenuManager.Get().CreateMenuView());
+            //MissionStartingManager.AddMissionBehaviour(entranceView, AMenuManager.Get().CreateGameKeyConfigView());
+            //MissionStartingManager.AddMissionBehaviour(entranceView, new ComponentAdder());
 
             var config = CommandSystemConfig.Get();
 
