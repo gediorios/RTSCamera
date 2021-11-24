@@ -81,6 +81,17 @@ namespace RTSCamera.Config
 
         public bool SwitchTeamHotkeyEnabled;
 
+
+        public bool ClickToSelectFormation = true;
+
+        public bool AttackSpecificFormation = true;
+
+        public bool ShouldHighlightWithOutline()
+        {
+            return ClickToSelectFormation || AttackSpecificFormation;
+        }
+
+
         public static void OnMenuClosed()
         {
             Get().Serialize();

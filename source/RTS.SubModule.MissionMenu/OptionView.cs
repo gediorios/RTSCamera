@@ -10,7 +10,7 @@ namespace MissionSharedLibrary.View
     public class OptionView : MissionMenuViewBase
     {
         public OptionView(int viewOrderPriority, Version version)
-            : base(viewOrderPriority, "MissionLibrary" + nameof(OptionView) + "-" + version)
+            : base(viewOrderPriority, "RTSCameraMenuView")
         {
         }
 

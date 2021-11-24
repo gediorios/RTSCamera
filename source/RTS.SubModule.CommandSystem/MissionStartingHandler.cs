@@ -8,6 +8,7 @@ using RTSCamera.CommandSystem.Config;
 using RTSCamera.CommandSystem.Logic;
 using RTSCamera.CommandSystem.Patch;
 using RTSCamera.CommandSystem.View;
+using RTSCamera.Config;
 using RTSCamera.Logic;
 using RTSCamera.View;
 using RTSCameraAgentComponent;
@@ -54,7 +55,7 @@ namespace RTSCamera.MissionStartingHandler
             //MissionStartingManager.AddMissionBehaviour(entranceView, AMenuManager.Get().CreateGameKeyConfigView());
             //MissionStartingManager.AddMissionBehaviour(entranceView, new ComponentAdder());
 
-            var config = CommandSystemConfig.Get();
+            var config = RTSCameraConfig.Get();
 
             if (config.AttackSpecificFormation)
                 PatchChargeToFormation.Patch();

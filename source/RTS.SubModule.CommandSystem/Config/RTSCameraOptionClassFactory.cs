@@ -20,14 +20,17 @@ namespace RTSCamera.Config
     {
         public static IObjectIdentitfication<AOptionClass> CreateOptionClassProvider(IMenuClassCollection menuClassCollection)
         {
+            var optName = "CameraOptionClass";
+
             return ObjectIdentitfication<AOptionClass>.Create(() =>
             {
-                var optionClass = new OptionClass(Constants.ModuleId,
-                    GameTexts.FindText("str_rts_camera_option_class"), menuClassCollection);
+                var optionClass = new OptionClass(optName, GameTexts.FindText("str_rts_camera_option_class"), menuClassCollection);
+
                 var rtsCameraLogic = Mission.Current.GetMissionBehaviour<RTSCameraLogic>();
                 var selectCharacterView = Mission.Current.GetMissionBehaviour<RTSCameraSelectCharacterView>();
                 var hideHudView = Mission.Current.GetMissionBehaviour<HideHUDView>();
                 var missionScreen = selectCharacterView.MissionScreen;
+
                 var menuManager = AMenuManager.Get();
 
                 var cameraOptionCategory = new OptionCategory("Camera", GameTexts.FindText("str_rts_camera_camera_options"));
@@ -39,11 +42,13 @@ namespace RTSCamera.Config
                         rtsCameraLogic.SwitchFreeCameraLogic.SwitchCamera();
                         menuManager.RequestToCloseMenu();
                     }));
+
                 cameraOptionCategory.AddOption(new BoolOptionViewModel(
                     GameTexts.FindText("str_rts_camera_use_free_camera_by_default"),
                     GameTexts.FindText("str_rts_camera_use_free_camera_by_default_hint"),
                     () => RTSCameraConfig.Get().UseFreeCameraByDefault,
                     b => RTSCameraConfig.Get().UseFreeCameraByDefault = b));
+
                 cameraOptionCategory.AddOption(new NumericOptionViewModel(
                     GameTexts.FindText("str_rts_camera_raised_height_after_switching_to_free_camera"),
                     GameTexts.FindText("str_rts_camera_raised_height_hint"), () => RTSCameraConfig.Get().RaisedHeight,
@@ -51,6 +56,7 @@ namespace RTSCamera.Config
                     {
                         RTSCameraConfig.Get().RaisedHeight = f;
                     }, 0, 50, true, true));
+
                 if (!RTSEngineState.WatchMode)
                 {
                     cameraOptionCategory.AddOption(new SelectionOptionViewModel(
@@ -306,7 +312,7 @@ namespace RTSCamera.Config
                     optionClass.AddOptionCategory(1, cheatOptionCategory);
                 }
                 return optionClass;
-            }, Constants.ModuleId);
+            }, optName);
         }
     }
 }

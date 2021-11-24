@@ -1,5 +1,6 @@
 ﻿using MissionSharedLibrary.Utilities;
 using RTSCamera.CommandSystem.Config;
+using RTSCamera.Config;
 using TaleWorlds.MountAndBlade;
 using static TaleWorlds.MountAndBlade.MovementOrder;
 
@@ -11,7 +12,7 @@ namespace RTSCamera.CommandSystem.Patch
         public static bool GetSubstituteOrder_Prefix(MovementOrder __instance, ref MovementOrderEnum movementOrderEnum, ref MovementOrder __result,
             Formation formation)
         {
-            if (__instance.OrderType == OrderType.ChargeWithTarget && CommandSystemConfig.Get().AttackSpecificFormation)
+            if (__instance.OrderType == OrderType.ChargeWithTarget && RTSCameraConfig.Get().AttackSpecificFormation)
             {
                 var position = formation.QuerySystem.MedianPosition;
                 position.SetVec2(formation.CurrentPosition);

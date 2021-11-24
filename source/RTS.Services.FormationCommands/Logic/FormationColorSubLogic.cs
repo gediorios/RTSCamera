@@ -46,7 +46,7 @@ namespace RTSCamera.CommandSystem.Logic.SubLogic
         private OrderController PlayerOrderController => Mission.Current.PlayerTeam?.PlayerOrderController;
         private Formation _mouseOverFormation;
         private CommandSystemOrderUIHandler _commandSystemOrderUiHandler;
-        private readonly CommandSystemConfig _config = CommandSystemConfig.Get();
+        private readonly RTSCameraConfig _config = RTSCameraConfig.Get();
 
         private bool _isOrderShown;
         private bool HighlightEnabled => _isOrderShown && _config.ShouldHighlightWithOutline();

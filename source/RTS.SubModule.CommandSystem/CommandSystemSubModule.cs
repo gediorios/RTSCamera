@@ -174,7 +174,7 @@ namespace RTS.SubModule.CommandSystem
 
             //CommandSystemGameKeyCategory.RegisterGameKeyCategory();
 
-            AMenuManager.Get().OnMenuClosedEvent += CommandSystemConfig.OnMenuClosed;
+            //AMenuManager.Get().OnMenuClosedEvent += CommandSystemConfig.OnMenuClosed;
             //var menuClassCollection = AMenuManager.Get().MenuClassCollection;
             menuClassCollection.AddOptionClass(CommandSystemOptionClassFactory.CreateOptionClassProvider(menuClassCollection));
 

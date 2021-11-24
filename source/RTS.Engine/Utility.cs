@@ -1,4 +1,5 @@
 ﻿using RTSCamera.CommandSystem.Config;
+using RTSCamera.Config;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -535,7 +536,7 @@ namespace MissionSharedLibrary.Utilities
         public static bool ShouldChargeToFormation(Agent agent)
         {
             return
-                agent.Formation != null && agent.Formation.GetReadonlyMovementOrderReference().OrderType == OrderType.ChargeWithTarget && CommandSystemConfig.Get().AttackSpecificFormation &&
+                agent.Formation != null && agent.Formation.GetReadonlyMovementOrderReference().OrderType == OrderType.ChargeWithTarget && RTSCameraConfig.Get().AttackSpecificFormation &&
                 (QueryLibrary.IsCavalry(agent) ||
                 QueryLibrary.IsRangedCavalry(agent) && agent.Formation.FiringOrder.OrderType == OrderType.HoldFire ||
                 QueryLibrary.IsInfantry(agent) ||

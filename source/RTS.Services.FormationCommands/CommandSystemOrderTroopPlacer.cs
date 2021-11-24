@@ -24,7 +24,7 @@ namespace RTSCamera.CommandSystem.View
     public class CommandSystemOrderTroopPlacer : MissionView
     {
         private FormationColorSubLogic _contourView;
-        private readonly CommandSystemConfig _config = CommandSystemConfig.Get();
+        private readonly RTSCameraConfig _config = RTSCameraConfig.Get();
         private void RegisterReload()
         {
             MissionEvents.PostSwitchTeam += OnPostSwitchTeam;
