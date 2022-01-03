@@ -149,7 +149,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddMissionBehaviourView.cs" />
+    <Compile Include="DefaultRTSCommandSystemView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MissionViewsSubModule.cs" />
   </ItemGroup>

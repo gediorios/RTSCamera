@@ -59,8 +59,8 @@ namespace MissionSharedLibrary
             RegisterProvider(() => new CameraControllerManager(), new Version(1, 0));
             //RegisterProvider(() => new InputControllerFactory(), new Version(1, 0));
             RegisterProvider(() => new MissionStartingManager(), new Version(1, 1));
-            RegisterProvider(() => new DefaultMissionStartingHandlerAdder(), new Version(1, 0));
-           //RegisterProvider(() => new MenuManager(), new Version(1, 1));
+            //RegisterProvider(() => new DefaultMissionStartingHandlerAdder(), new Version(1, 0));
+            //RegisterProvider(() => new MenuManager(), new Version(1, 1));
         }
 
         public static void RegisterProvider<T>(Func<ATag<T>> creator, Version providerVersion, string key = "") where T : ATag<T>

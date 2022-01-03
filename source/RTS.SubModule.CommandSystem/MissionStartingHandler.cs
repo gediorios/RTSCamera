@@ -50,7 +50,6 @@ namespace RTSCamera.MissionStartingHandler
                 new DragWhenCommandView()
             };
 
-
             //MissionStartingManager.AddMissionBehaviour(entranceView, AMenuManager.Get().CreateMenuView());
             //MissionStartingManager.AddMissionBehaviour(entranceView, AMenuManager.Get().CreateGameKeyConfigView());
             //MissionStartingManager.AddMissionBehaviour(entranceView, new ComponentAdder());

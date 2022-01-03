@@ -3,7 +3,7 @@
 namespace MissionLibrary.Controller.MissionBehaviors
 {
     [DefaultView]
-    class AddMissionBehaviourView : MissionView
+    class DefaultRTSCommandSystemView : MissionView
     {
         public override void OnCreated()
         {
@@ -18,7 +18,7 @@ namespace MissionLibrary.Controller.MissionBehaviors
 
             RTSEngineState.GetProvider<AMissionStartingManager>().OnPreMissionTick(this, dt);
 
-            var self = Mission.GetMissionBehavior<AddMissionBehaviourView>();
+            var self = Mission.GetMissionBehavior<DefaultRTSCommandSystemView>();
             if (self == this)
             {
                 Mission.RemoveMissionBehavior(self);
