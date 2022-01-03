@@ -21,7 +21,7 @@ namespace RTSCamera.CommandSystem.Config
 
             return ObjectIdentitfication<AOptionClass>.Create(() =>
             {
-                var contourView = Mission.Current.GetMissionBehaviour<CommandSystemLogic>().FormationColorSubLogic;
+                var contourView = Mission.Current.GetMissionBehavior<CommandSystemLogic>().FormationColorSubLogic;
 
                 var optionClass = new OptionClass(optName, GameTexts.FindText("str_rts_camera_command_system_option_class"), menuClassCollection);
                 var commandOptionCategory = new OptionCategory("Command", GameTexts.FindText("str_rts_camera_command_system_command_system_options"));

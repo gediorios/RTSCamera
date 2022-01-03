@@ -233,7 +233,7 @@ namespace MissionSharedLibrary.Utilities
 
             try
             {
-                mission.GetMissionBehaviour<MissionMainAgentController>()?.InteractionComponent.ClearFocus();
+                mission.GetMissionBehavior<MissionMainAgentController>()?.InteractionComponent.ClearFocus();
                 if (mission.MainAgent.Controller == Agent.ControllerType.Player)
                 {
                     if (mission.MainAgent.Formation != null && mission.MainAgent.IsUsingGameObject && !(mission.MainAgent.CurrentlyUsedGameObject is SpawnedItemEntity))
@@ -466,7 +466,7 @@ namespace MissionSharedLibrary.Utilities
         public static void UpdateMainAgentControllerState(Agent agent, bool isSpectatorCamera, Agent.ControllerType playerControllerInFreeCamera)
         {
 
-            var controller = Mission.Current.GetMissionBehaviour<MissionMainAgentController>();
+            var controller = Mission.Current.GetMissionBehavior<MissionMainAgentController>();
             if (controller != null)
             {
                 if (agent.Controller == Agent.ControllerType.Player && (!isSpectatorCamera || playerControllerInFreeCamera == Agent.ControllerType.Player))

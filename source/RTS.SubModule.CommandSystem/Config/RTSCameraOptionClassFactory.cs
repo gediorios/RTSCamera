@@ -26,9 +26,9 @@ namespace RTSCamera.Config
             {
                 var optionClass = new OptionClass(optName, GameTexts.FindText("str_rts_camera_option_class"), menuClassCollection);
 
-                var rtsCameraLogic = Mission.Current.GetMissionBehaviour<RTSCameraLogic>();
-                var selectCharacterView = Mission.Current.GetMissionBehaviour<RTSCameraSelectCharacterView>();
-                var hideHudView = Mission.Current.GetMissionBehaviour<HideHUDView>();
+                var rtsCameraLogic = Mission.Current.GetMissionBehavior<RTSCameraLogic>();
+                var selectCharacterView = Mission.Current.GetMissionBehavior<RTSCameraSelectCharacterView>();
+                var hideHudView = Mission.Current.GetMissionBehavior<HideHUDView>();
                 var missionScreen = selectCharacterView.MissionScreen;
 
                 var menuManager = AMenuManager.Get();
@@ -82,7 +82,7 @@ namespace RTSCamera.Config
                                 if (Mission.Current.MainAgent.Controller == Agent.ControllerType.AI)
                                     return (int) Agent.ControllerType.AI;
 
-                                var controller = Mission.Current.GetMissionBehaviour<MissionMainAgentController>();
+                                var controller = Mission.Current.GetMissionBehavior<MissionMainAgentController>();
 
                                 if (controller == null || controller.IsDisabled || Mission.Current.MainAgent.Controller == Agent.ControllerType.None)
                                     return (int) Agent.ControllerType.None;
@@ -107,7 +107,7 @@ namespace RTSCamera.Config
                     b =>
                     {
                         RTSCameraConfig.Get().ConstantSpeed = b;
-                        var view = Mission.Current.GetMissionBehaviour<FlyCameraMissionView>();
+                        var view = Mission.Current.GetMissionBehavior<FlyCameraMissionView>();
                         if (view != null)
                             view.ConstantSpeed = b;
                     }));
@@ -118,7 +118,7 @@ namespace RTSCamera.Config
                     b =>
                     {
                         RTSCameraConfig.Get().IgnoreTerrain = b;
-                        var view = Mission.Current.GetMissionBehaviour<FlyCameraMissionView>();
+                        var view = Mission.Current.GetMissionBehavior<FlyCameraMissionView>();
                         if (view != null)
                             view.IgnoreTerrain = b;
                     }));
@@ -130,7 +130,7 @@ namespace RTSCamera.Config
                         b =>
                         {
                             RTSCameraConfig.Get().IgnoreBoundaries = b;
-                            var view = Mission.Current.GetMissionBehaviour<FlyCameraMissionView>();
+                            var view = Mission.Current.GetMissionBehavior<FlyCameraMissionView>();
                             if (view != null)
                                 view.IgnoreBoundaries = b;
                         }));

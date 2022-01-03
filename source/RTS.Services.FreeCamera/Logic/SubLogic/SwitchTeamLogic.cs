@@ -46,7 +46,7 @@ namespace RTSCamera.Logic.SubLogic
             if (Mission.PlayerEnemyTeam == null)
                 return;
 
-            if (Mission.GetMissionBehaviour<SiegeDeploymentHandler>() != null)
+            if (Mission.GetMissionBehavior<SiegeDeploymentHandler>() != null)
                 return;
 
             bool firstTime = Mission.PlayerEnemyTeam.PlayerOrderController.Owner == null;

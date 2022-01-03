@@ -33,7 +33,7 @@ namespace RTSCamera.MissionStartingHandler
         public override void OnCreated(MissionView entranceView)
         {
 
-            List<MissionBehaviour> list = new List<MissionBehaviour>
+            List<MissionBehavior> list = new List<MissionBehavior>
             {
                 new RTSCameraSelectCharacterView(),
                 new RTSCameraLogic(),

@@ -118,7 +118,7 @@ namespace RTSCamera.Patch.Fix
             _uiHandler.OnMissionScreenInitialize();
             _uiHandler.OnMissionScreenActivate();
 
-            InitializeInADisgustingManner?.Invoke(Mission.Current.GetMissionBehaviour<OrderTroopPlacer>(), new object[] { });
+            InitializeInADisgustingManner?.Invoke(Mission.Current.GetMissionBehavior<OrderTroopPlacer>(), new object[] { });
             _isInSwitchTeamEvent = false;
         }
     }
